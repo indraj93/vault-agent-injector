@@ -30,7 +30,7 @@ roleRef:
   name: vault-agent-injector-clusterrole
 subjects:
 - kind: ServiceAccount
-  namespace: vault-agent-injector
+  namespace: vault-agent-injector01
   name: vault-agent-injector
 ---
 # Source: vault/templates/injector-service.yaml
@@ -127,7 +127,7 @@ webhooks:
     clientConfig:
       service:
         name: vault-agent-injector-svc
-        namespace: vault-agent-injector
+        namespace: vault-agent-injector01
         path: "/mutate"
     rules:
       - operations: ["CREATE", "UPDATE"]
